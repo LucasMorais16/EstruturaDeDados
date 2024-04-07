@@ -14,10 +14,7 @@ void imprime();
 int main() {
     insereLista(500);
     insereLista(33);
-    insereLista(890);
-    insereLista(2);
-    insereLista(400);
-    insereLista(50);
+   
     imprime();
     //buscaPrimeiroNLista(2);
     //buscaPrimeiroNLista(20);
@@ -40,18 +37,21 @@ void insereLista(int valor)
         std::cout << "Lista cheia \n";
         return;
     }
-    for (i=tamanho; i>0 && valor<lista[i-1] ; i--) {
+    for (i=tamanho; i>0 && valor<lista[i-1] ; i--) //ordenação
+    {  
         lista[i]=lista[i-1];
-   }
+    }
     lista[i] = valor;
     tamanho++;
     std::cout << "Elemento inserido\n";
 }
  
 
-void removeValor(int valor) {
+void removeValor(int valor) 
+{
     int i;
-    if (tamanho == 0) {
+    if (tamanho == 0) 
+    {
         std::cout << "Lista Vazia";
         return;
     }
@@ -71,7 +71,8 @@ void removeValor(int valor) {
 
 void recuperaLista(int posicao) {
     // imprime o valor inserido em uma determinada posição
-    if (tamanho == 0) {
+    if (tamanho == 0) 
+    {
         std::cout << "Lista Vazia";
         return;
     }
