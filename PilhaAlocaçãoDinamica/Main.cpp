@@ -29,12 +29,18 @@ int main()
 	} while (valor != -1);
 
 	imprime();
-
 	topo();
 
 	pop();
 	imprime();
+	topo();
 
+	pop();
+	imprime();
+	topo();
+
+	pop();
+	imprime();
 	topo();
 	
 	if (vazia() == true) {
@@ -60,10 +66,8 @@ void pop()
 		return;
 	}
 
-	no* temp = pilha;
 	pilha = pilha->prox;
 	std::cout << "\nElemento removido" << std::endl;
-	delete temp;
 }
 
 void topo()
@@ -74,12 +78,10 @@ void topo()
 		return;
 	}
 
-	no* temp = pilha;
-
 	std::cout << "\n";
 	std::cout << "Topo da pilha:" << std::endl;
 
-	std::cout << temp->dado;
+	std::cout << pilha->dado;
 	std::cout << "\n";
 }
 
@@ -110,4 +112,5 @@ void imprime()
 		temp = temp->prox;
 	}
 	std::cout << "\n";
+	delete temp;
 }
