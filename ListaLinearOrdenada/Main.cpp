@@ -14,17 +14,16 @@ void imprime();
 int main() {
     insereLista(500);
     insereLista(33);
-   
+    insereLista(80);
+    insereLista(55);
+    insereLista(90);
+
     imprime();
-    //buscaPrimeiroNLista(2);
-    //buscaPrimeiroNLista(20);
-    //buscaRepetidosLista(2);
-    //buscaRepetidosLista(15);
+
     //recuperaLista(3);
-    removeValor(4);
+    removeValor(80);
     imprime();
-    removeValor(0);
-    imprime();
+ 
 
     return 0;
 }
@@ -63,10 +62,13 @@ void removeValor(int valor)
             for (int j = i; j < tamanho - 1; j++)
             {
                 lista[j] = lista[j + 1];
-            }         
-        }       
+            }
+            break;
+        }
     }
     tamanho--;
+
+    std::cout << "Elemento removido" << std::endl;
 }
 
 void recuperaLista(int posicao) {
