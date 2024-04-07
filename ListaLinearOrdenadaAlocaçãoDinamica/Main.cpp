@@ -2,10 +2,10 @@
 
 struct no {
     int dado;
-    struct no* prox;
+    no* prox;
 };
 
-struct no* lista = NULL;
+no* lista = NULL;
 
 void insereLista(int valor);
 void recuperaLista(int posicao);
@@ -30,9 +30,9 @@ int main()
 
 void insereLista(int valor)
 {
-    struct no* temp = lista;
-    struct no* anterior = NULL;
-    struct no* novo = new(struct no);
+    no* temp = lista;
+    no* anterior = NULL;
+    no* novo = new(struct no);
 
     novo->dado = valor;
 
@@ -57,8 +57,8 @@ void insereLista(int valor)
 
 void removeValor(int valor) 
 {
-    struct no* temp = lista;
-    struct no* anterior = NULL;
+    no* temp = lista;
+    no* anterior = NULL;
 
     // Busca pelo valor na lista
     while (temp != NULL && temp->dado < valor) { //considerar a ordenação (maior ou menor)
@@ -109,7 +109,7 @@ void imprime()
         std::cout << "Erro: a lista esta vazia." << std::endl;
         return;
     }
-    struct no* temp = lista;
+    no* temp = lista;
 
     std::cout << "Elementos da Lista Ordenada:" << std::endl;
 
