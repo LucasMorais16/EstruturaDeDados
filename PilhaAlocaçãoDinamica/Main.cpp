@@ -2,10 +2,10 @@
 
 struct no {
 	int dado;
-	struct no* prox;
+	no* prox;
 };
 
-struct no* pilha = NULL;
+no* pilha = NULL;
 
 void push(int valor);
 void pop();
@@ -16,7 +16,7 @@ void imprime();
 int main()
 {
 	int valor;
-	std::cout << "Insira os valores que você deseja na pilha. (-1 para encerrar)" << std::endl;
+	std::cout << "Insira os valores que voce deseja na pilha. (-1 para encerrar)" << std::endl;
 
 	do
 	{
@@ -35,11 +35,7 @@ int main()
 	pop();
 	imprime();
 
-	pop();
-	imprime();
-
-	pop();
-	imprime();
+	topo();
 	
 	if (vazia() == true) {
 		std::cout << "A pilha esta vazia" << std::endl;
@@ -49,7 +45,7 @@ int main()
 
 void push(int valor)
 {
-	struct no* novo;
+	no* novo;
 	novo = new(struct no);
 	novo->dado = valor;
 	novo->prox = pilha;
@@ -60,24 +56,25 @@ void pop()
 {
 	if (pilha == NULL) 
 	{
-		std::cout << "Erro: a pilha está vazia." << std::endl;
+		std::cout << "Erro: a pilha esta vazia." << std::endl;
 		return;
 	}
 
-	struct no* temp = pilha;
+	no* temp = pilha;
 	pilha = pilha->prox;
-	free(temp);
+	std::cout << "\nElemento removido" << std::endl;
+	delete temp;
 }
 
 void topo()
 {
 	if (pilha == NULL)
 	{
-		std::cout << "Erro: a pilha está vazia." << std::endl;
+		std::cout << "Erro: a pilha esta vazia." << std::endl;
 		return;
 	}
 
-	struct no* temp = pilha;
+	no* temp = pilha;
 
 	std::cout << "\n";
 	std::cout << "Topo da pilha:" << std::endl;
@@ -90,7 +87,7 @@ bool vazia()
 {
 	if (pilha == NULL)
 	{
-		std::cout << "Erro: a pilha está vazia." << std::endl;
+		std::cout << "Erro: a pilha esta vazia." << std::endl;
 		return true;
 	}
 	return false;
@@ -100,10 +97,10 @@ void imprime()
 {
 	if (pilha == NULL)
 	{
-		std::cout << "Erro: a pilha está vazia." << std::endl;
+		std::cout << "Erro: a pilha esta vazia." << std::endl;
 		return;
 	}
-	struct no* temp = pilha;
+	no* temp = pilha;
 
 	std::cout << "\n";
 	std::cout << "Elementos da pilha:" << std::endl;
