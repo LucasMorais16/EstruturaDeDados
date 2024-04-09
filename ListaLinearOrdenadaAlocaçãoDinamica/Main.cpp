@@ -18,6 +18,7 @@ int main()
     insereLista(20);
     insereLista(3);
     insereLista(15);
+    insereLista(40);
 
     imprime();
 
@@ -104,8 +105,9 @@ void buscaLista(int valor)
         return;
     }
 
-    for (temp = lista; temp != NULL; temp = temp->prox)
+    for (temp = lista; temp != NULL && valor >= temp->dado; temp = temp->prox)
     {
+        std::cout << temp->dado << std::endl;
         if (temp->dado == valor)
         {
             std::cout << "Numero " << valor << " encontrado na posicao " << posicao << std::endl;

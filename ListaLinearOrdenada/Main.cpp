@@ -55,7 +55,7 @@ void removeValor(int valor)
         return;
     }
  
-    for (i = 0; i < tamanho; i++) 
+    for (i = 0; i < tamanho && valor >= lista[i]; i++) 
     {
         if (valor == lista[i])
         {
@@ -63,12 +63,11 @@ void removeValor(int valor)
             {
                 lista[j] = lista[j + 1];
             }
-            break;
+            std::cout << "Elemento removido" << std::endl;
+            tamanho--;
+            return;
         }
     }
-    tamanho--;
-
-    std::cout << "Elemento removido" << std::endl;
 }
 
 void recuperaLista(int posicao) {
@@ -92,7 +91,7 @@ void buscaPrimeiroNLista(int valor) {
         std::cout << "Lista vazia" << std::endl;
         return;
     }
-    for (i = 0; i < tamanho; i++) {
+    for (i = 0; i < tamanho && valor >= lista[i]; i++) {
         if (valor == lista[i]) {
             std::cout << "O valor esta na posicao: " << i << std::endl;
             return;
