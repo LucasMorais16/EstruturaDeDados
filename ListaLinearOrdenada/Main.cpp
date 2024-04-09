@@ -55,7 +55,7 @@ void removeValor(int valor)
         return;
     }
  
-    for (i = 0; i < tamanho - 1; i++) 
+    for (i = 0; i < tamanho; i++) 
     {
         if (valor == lista[i])
         {

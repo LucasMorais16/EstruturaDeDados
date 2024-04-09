@@ -14,7 +14,6 @@ int main()
 	int inicioF = 0;
 	int fimF = 0;
 	int contador = 0; //numero de elementos na fila
-	int valor;
 
 	for (int i = 0; i < 7; i++)
 	{
