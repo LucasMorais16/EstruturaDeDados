@@ -10,8 +10,7 @@ no* lista = NULL;
 void insereLista(int valor);
 void recuperaLista(int posicao);
 void removeValor(int valor); //fazer por valor, considerar a ordenação
-void buscaPrimeiroNLista(int valor);
-void buscaRepetidosLista(int valor);
+void buscaLista(int valor);
 void imprime();
 
 int main() 
@@ -21,6 +20,8 @@ int main()
     insereLista(15);
 
     imprime();
+
+    buscaLista(20);
 
     removeValor(3);
     imprime();
@@ -92,14 +93,28 @@ void recuperaLista(int posicao)
    
 }
 
-void buscaPrimeiroNLista(int valor) 
+void buscaLista(int valor)
 {
-    
-}
+    no* temp;
+    int posicao = 0;
 
-void buscaRepetidosLista(int valor) 
-{
-    
+    if (lista == NULL)
+    {
+        std::cout << "Lista vazia" << std::endl;
+        return;
+    }
+
+    for (temp = lista; temp != NULL; temp = temp->prox)
+    {
+        if (temp->dado == valor)
+        {
+            std::cout << "Numero " << valor << " encontrado na posicao " << posicao << std::endl;
+            return;
+        }
+        posicao++;
+    }
+
+    std::cout << "Numero " << valor << " nao encontrado" << std::endl;
 }
 
 void imprime() 

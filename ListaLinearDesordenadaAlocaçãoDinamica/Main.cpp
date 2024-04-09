@@ -106,7 +106,6 @@ void buscaLista(int valor)
 
     for (temp = lista; temp != NULL; temp = temp->prox)
     {
-        std::cout << temp->dado << std::endl;
         if (temp->dado == valor)
         {
             std::cout << "Numero " << valor << " encontrado na posicao " << posicao << std::endl;
@@ -116,11 +115,6 @@ void buscaLista(int valor)
     }
 
     std::cout << "Numero " << valor << " nao encontrado" << std::endl;
-}
-
-void buscaRepetidosLista(int valor)
-{
-
 }
 
 void imprime()
