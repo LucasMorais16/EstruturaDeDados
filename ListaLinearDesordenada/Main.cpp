@@ -15,7 +15,7 @@ void imprime();
 int main() {
     insereLista(0, 0);
     insereLista(1, 1);
-    insereLista(2, 1);
+    insereLista(2, 2);
     //insereLista(3, 3);
     //insereLista(4, 4);
     //insereLista(2, 5);
@@ -28,7 +28,7 @@ int main() {
     //recuperaLista(3);
     imprime();
 
-    removeLista(0);
+    removeLista(2);
 
     imprime();
 
@@ -69,7 +69,7 @@ void removeLista(int posicao) {
         cout << "Posicao Invalida" << endl;
         return;
     }
-    for (i = posicao; i < tamanho - 1; i++) 
+    for (i = posicao; i < tamanho; i++) 
     {
         lista[i] = lista[i + 1];
     }
