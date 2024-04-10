@@ -7,8 +7,7 @@ int tamanho = 0;
 void insereLista(int valor);
 void recuperaLista(int posicao);
 void removeValor(int valor); //fazer por valor, considerar a ordenação
-void buscaPrimeiroNLista(int valor);
-void buscaRepetidosLista(int valor);
+void buscaLista(int valor);
 void imprime();
 
 int main() {
@@ -84,7 +83,7 @@ void recuperaLista(int posicao) {
     std::cout << "O valor na posicao " << posicao << " é " << lista[posicao] << std::endl;
 }
 
-void buscaPrimeiroNLista(int valor) {
+void buscaLista(int valor) {
     // informa em que posição da lista está determinado valor.
     int i;
     if (tamanho == 0) {
@@ -98,29 +97,6 @@ void buscaPrimeiroNLista(int valor) {
         }
     }
     std::cout << "O valor nao esta na lista" << std::endl;
-}
-
-void buscaRepetidosLista(int valor) {
-    // informa em que posição da lista está determinado valor.
-    int i;
-    int encontrado = 0;
-    if (tamanho == 0) {
-        std::cout << "Lista vazia" << std::endl;
-        return;
-    }
-    for (i = 0; i < tamanho; i++) {
-        if (valor == lista[i]) {
-            encontrado++;
-            std::cout << "O valor esta na posicao: " << i << std::endl;
-        }
-    }
-
-    if (encontrado == 0) {
-        std::cout << "O valor nao esta na lista" << std::endl;
-    }
-    else {
-        std::cout << "O valor foi encontrado " << encontrado << " vezes" << std::endl;
-    }
 }
 
 void imprime() {

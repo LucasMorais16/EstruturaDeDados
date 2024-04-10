@@ -22,10 +22,11 @@ int main()
 
     imprime();
 
-    buscaLista(20);
+    //buscaLista(20);
+    recuperaLista(0);
 
-    removeValor(3);
-    imprime();
+    //removeValor(3);
+    //imprime();
 
     return 0;
 }
@@ -91,23 +92,47 @@ void removeValor(int valor)
 
 void recuperaLista(int posicao) 
 {
-   
-}
-
-void buscaLista(int valor)
-{
-    no* temp;
-    int posicao = 0;
-
     if (lista == NULL)
     {
         std::cout << "Lista vazia" << std::endl;
         return;
     }
 
+    if (posicao < 0)
+    {
+        std::cout << "Posicao invalida" << std::endl;
+        return;
+    }
+
+    no* temp = lista;
+
+    for (int i = 0; temp != NULL; temp = temp->prox, i++)
+    {
+        if (i == posicao)
+        {
+            std::cout << "O valor na posicao " << posicao << " eh " << temp->dado;
+            delete temp;
+            return;
+        }
+    }
+
+    std::cout << "Nao foi encontrado um valor nessa posicao" << std::endl;
+
+}
+
+void buscaLista(int valor)
+{
+    if (lista == NULL)
+    {
+        std::cout << "Lista vazia" << std::endl;
+        return;
+    }
+
+    no* temp;
+    int posicao = 0;
+
     for (temp = lista; temp != NULL && valor >= temp->dado; temp = temp->prox)
     {
-        std::cout << temp->dado << std::endl;
         if (temp->dado == valor)
         {
             std::cout << "Numero " << valor << " encontrado na posicao " << posicao << std::endl;
