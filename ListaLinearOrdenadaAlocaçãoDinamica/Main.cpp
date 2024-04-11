@@ -64,7 +64,7 @@ void removeValor(int valor)
     no* anterior = NULL;
 
     // Busca pelo valor na lista
-    while (temp != NULL && temp->dado < valor) { //considerar a ordenação (maior ou menor)
+    while (temp != NULL && valor > temp->dado) { //considerar a ordenação (maior ou menor)
         anterior = temp;
         temp = temp->prox;
     }
@@ -78,12 +78,12 @@ void removeValor(int valor)
     // Se o valor for o primeiro elemento da lista
     if (anterior == NULL) {
         lista = temp->prox;
-        delete temp;
     }
     else {
         anterior->prox = temp->prox;
-        delete temp;
     }
+
+    delete temp;
 
     std::cout << "\n";
     std::cout << "Valor " << valor << " removido da lista." << std::endl;
@@ -95,12 +95,6 @@ void recuperaLista(int posicao)
     if (lista == NULL)
     {
         std::cout << "Lista vazia" << std::endl;
-        return;
-    }
-
-    if (posicao < 0)
-    {
-        std::cout << "Posicao invalida" << std::endl;
         return;
     }
 
@@ -116,7 +110,7 @@ void recuperaLista(int posicao)
         }
     }
 
-    std::cout << "Nao foi encontrado um valor nessa posicao" << std::endl;
+    std::cout << "Posicao inexistente." << std::endl;
 
 }
 
@@ -151,6 +145,7 @@ void imprime()
         std::cout << "Erro: a lista esta vazia." << std::endl;
         return;
     }
+
     no* temp = lista;
 
     std::cout << "Elementos da Lista Ordenada:" << std::endl;

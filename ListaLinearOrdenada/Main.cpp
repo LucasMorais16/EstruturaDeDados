@@ -67,6 +67,7 @@ void removeValor(int valor)
             return;
         }
     }
+    std::cout << "Elemento nao encontrado" << std::endl;
 }
 
 void recuperaLista(int posicao) {
