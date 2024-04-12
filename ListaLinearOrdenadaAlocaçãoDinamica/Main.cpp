@@ -25,7 +25,7 @@ int main()
     //buscaLista(20);
     recuperaLista(0);
 
-    //removeValor(3);
+    removeValor(3);
     //imprime();
 
     return 0;
@@ -55,6 +55,8 @@ void insereLista(int valor)
         anterior->prox = novo;
     }
     novo->prox = temp;
+
+    cout << "Elemento inserido\n" << endl;
 }
 
 
@@ -64,7 +66,7 @@ void removeValor(int valor)
     no* anterior = NULL;
 
     // Busca pelo valor na lista
-    while (temp != NULL && valor > temp->dado) { //considerar a ordenação (maior ou menor)
+    while (temp != NULL && temp->dado < valor) { //considerar a ordenação (maior ou menor)
         anterior = temp;
         temp = temp->prox;
     }
@@ -105,7 +107,6 @@ void recuperaLista(int posicao)
         if (i == posicao)
         {
             std::cout << "O valor na posicao " << posicao << " eh " << temp->dado;
-            delete temp;
             return;
         }
     }
